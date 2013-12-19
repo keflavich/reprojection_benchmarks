@@ -17,3 +17,7 @@ def centered_gaussian():
     sigma = 1.0
     g = np.exp(-((x-4)**2+(y-4)**2)/(2*sigma**2))
     return g
+
+def centered_gaussian_hdu():
+    return fits.PrimaryHDU(data=centered_gaussian(),
+                           header=headers.header_radec)
