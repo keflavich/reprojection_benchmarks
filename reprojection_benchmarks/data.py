@@ -1,10 +1,16 @@
 import numpy as np
+from astropy.io import fits
+import headers
 
 def simple_3by3():
     z = np.zeros([3,3])
-    z[0,0] = 1.0
+    z[1,1] = 1.0
     return z
 
+
+def simple_3by3_hdu():
+    return fits.PrimaryHDU(data=simple_3by3(),
+                           header=headers.header_radec)
 
 def centered_gaussian():
     x,y = np.mgrid[:9,:9]
