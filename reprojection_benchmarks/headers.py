@@ -56,3 +56,10 @@ END
 header_gal = fits.Header().fromstring(header_gal_txt,'\n')
 header_radec = fits.Header().fromstring(header_radec_txt,'\n')
 header_radec2 = fits.Header().fromstring(header_radec2_txt,'\n')
+
+def generate_nxn_header(n, header=header_radec):
+    header['NAXIS1'] = int(n)
+    header['NAXIS2'] = int(n)
+    header['CRPIX1'] = n/2. + 1
+    header['CRPIX2'] = n/2. + 1
+    return header
