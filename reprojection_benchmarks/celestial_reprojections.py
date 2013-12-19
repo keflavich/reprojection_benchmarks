@@ -1,6 +1,7 @@
 from reproject.reproject import reproject
 from FITS_tools.hcongrid import hcongrid_hdu, wcsalign
 
+# should be relative imports, but I want to use this with %run...
 import headers
 import data
 
